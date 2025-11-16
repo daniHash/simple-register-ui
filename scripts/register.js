@@ -13,21 +13,18 @@ const handleSubmit = (e) => {
   const pass = password.value.trim();
   const repassw = repass.value.trim();
   console.log(name, ema, pass, repassw);
-  if (!name || !ema || !pass || !repass) e.preventDefault();
-  if (ema.length < 11) {
+  if (!name || !ema || !pass || !repass) {
     e.preventDefault();
     const notyf = new Notyf();
-    notyf.error("Please enter a valid email!");
+    notyf.error("Please enter all inputs");
+  }
+  if (ema.length < 11) {
+    e.preventDefault();
   }
   if (pass !== repassw) {
     e.preventDefault();
-    Swal.fire({
-      icon: "error", // نوع پیام: error, success, warning, info, question
-      title: "Oops...",
-      text: "Please enter a valid pass!",
-      background: "#432dd7", // رنگ بک‌گراند مودال
-      color: "#ffffff",
-    });
+    const notyf = new Notyf();
+    notyf.error("Please enter same pass!");
   }
 };
 const handleReset = () => {
