@@ -6,17 +6,18 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build output
+# Environment files (if you ever add them)
+.env
+.env.local
+
+# Build / Cache (if you later add tailwind build steps)
 dist/
 build/
+.cache/
 
-# OS Files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Temp files
-*.tmp
-*.log
-
-# Tailwind generated file
+# Optional: Tailwind source map
 styles/output.css.map
